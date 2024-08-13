@@ -3,13 +3,12 @@ import { LoginPage, SignupPage, ErrorPage, AppLayout } from "./pages";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { AuthProvider } from "./context/AuthContext";
 
-// TODO: Finsih making the task component
-// import {
-//   AllTasks,
-//   PendingTasks,
-//   InProgressTasks,
-//   CompletedTasks,
-// } from "./components/TaskComponents";
+import {
+  AllTasks,
+  PendingTasks,
+  InProgressTasks,
+  CompletedTasks,
+} from "./components/TaskComponents";
 
 import EditProfile from "./components/EditProfile";
 
@@ -25,11 +24,11 @@ const router = createBrowserRouter([
     ),
     errorElement: <ErrorPage />,
     children: [
-      // { path: "/", element: <AllTasks /> },
-      // { path: "pending", element: <PendingTasks /> },
-      // { path: "in-progress", element: <InProgressTasks /> },
-      // { path: "completed", element: <CompletedTasks /> },
-      // { path: "profile", element: <EditProfile /> },
+      { path: "/", element: <AllTasks /> },
+      { path: "pending", element: <PendingTasks /> },
+      { path: "in-progress", element: <InProgressTasks /> },
+      { path: "completed", element: <CompletedTasks /> },
+      { path: "profile", element: <EditProfile /> },
     ],
   },
   {
