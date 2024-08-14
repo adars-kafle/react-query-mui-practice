@@ -1,5 +1,40 @@
-const AllTasksContainer = () => {
-  return <div>AllTasksContainer</div>;
+import { Box, Paper, Typography } from "@mui/material";
+import { type TaskContainerProps } from "../../types";
+import TaskItem from "./TaskItems";
+
+const AllTasksContainer: React.FC<TaskContainerProps> = ({ status, tasks }) => {
+  const getStatusHeader = (status: string) => {
+    switch (status) {
+      case "pending":
+        return "TODO";
+      case "in-progress":
+        return "IN-PROGRESS";
+      case "completed":
+        return "COMPLETED";
+      default:
+        return status.toUpperCase();
+    }
+  };
+
+  return (
+    <Box
+      component={Paper}
+      elevation={3}
+      sx={{
+        borderRadius: 2,
+        minHeight: "450px",
+        padding: 1,
+        backgroundColor: "#f0f0f0",
+      }}
+    >
+      <Typography variant="h6" gutterBottom>
+        {getStatusHeader(status)}
+      </Typography>
+      {tasks.map((task) => (
+        <TaskItem key={task._id} task={task} />
+      ))}
+    </Box>
+  );
 };
 
 export default AllTasksContainer;
