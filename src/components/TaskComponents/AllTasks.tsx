@@ -1,6 +1,6 @@
 import { useTaskContext } from "../../context/TaskContext";
 import { Container, Grid, Typography } from "@mui/material";
-import TaskContainer from "./AllTasksTaskContainer";
+import TaskContainer from "./AllTasksContainer";
 import { type Task } from "../../types";
 
 const AllTasks = () => {
