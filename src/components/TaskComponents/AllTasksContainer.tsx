@@ -1,6 +1,6 @@
 import { Box, Paper, Typography } from "@mui/material";
 import { type TaskContainerProps } from "../../types";
-import TaskItem from "./TaskItems";
+import TaskItem from "./TaskItem";
 
 const AllTasksContainer: React.FC<TaskContainerProps> = ({ status, tasks }) => {
   const getStatusHeader = (status: string) => {
